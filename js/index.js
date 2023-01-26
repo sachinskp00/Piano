@@ -1,5 +1,5 @@
 
- //Play My Music
+//  //Play My Music
  function playMyMusic1(){
   var audio = document.getElementById("myMusic");
   audio.play();
@@ -30,6 +30,18 @@ myAudio.onplaying = function() {
 myAudio.onpause = function() {
   isPlaying = false;
 };
+
+
+
+
+for(let i = 1; i < 18; i++){
+  let audioEl = document.createElement('audio')
+  let audioWrap = document.getElementById('audioWrapper');
+  audioWrap.appendChild(audioEl);
+  audioEl.setAttribute('id', 'music'+i);
+  audioEl.innerHTML = `<source src="./tunes/${i}.mp3" type="audio/mp3">`
+}
+
 
 //Play Music on each button
 var music1 = document.getElementById("music1");
@@ -477,6 +489,9 @@ music17.onplaying = function() {
 music17.onpause = function() {
   isMusic17 = false;
 };
+
+
+
 
 
 
