@@ -31,7 +31,7 @@ myAudio.onpause = function () {
   isPlaying = false;
 };
 
-
+//Create keyboard
 let pianoKeysArr = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";"]
 pianoKeysArr.forEach((elem, index) => {
   index += 1;
