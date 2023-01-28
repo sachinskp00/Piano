@@ -1,10 +1,10 @@
 
 //  //Play My Music
- function playMyMusic1(){
+function playMyMusic1() {
   var audio = document.getElementById("myMusic");
   audio.play();
   console.log('play')
- }
+}
 
 
 //Play /Puase Music
@@ -14,34 +14,51 @@ var myText = document.getElementById("myText");
 var isPlaying = false;
 
 function playMyMusic() {
-  if(isPlaying){
+  if (isPlaying) {
     myAudio.pause();
-    myText.innerHTML= 'Play Song'
+    myText.innerHTML = 'Play Song'
   }
-  else{
+  else {
     myAudio.play()
-    myText.innerHTML= 'Pause Song'
+    myText.innerHTML = 'Pause Song'
   }
 }
 
-myAudio.onplaying = function() {
+myAudio.onplaying = function () {
   isPlaying = true;
 };
-myAudio.onpause = function() {
+myAudio.onpause = function () {
   isPlaying = false;
 };
 
 
+let pianoKeysArr = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";"]
+pianoKeysArr.forEach((elem, index) => {
+  index += 1;
+  let pianoKeys = document.getElementById('pianoKeys');
+  let list = document.createElement('li')
+  pianoKeys.appendChild(list);
+  list.innerHTML = `<span>${elem}</span>`
+  //list.setAttribute('class', 'key white');
+  if (index % 2 == 0) {
+    list.setAttribute('class', 'key black');
+  }
+  else {
+    list.setAttribute('class', 'key white');
+  }
+  list.setAttribute('data-key', elem);
 
+  list.setAttribute('onclick', 'Play' + index++ + '()');
 
-for(let i = 1; i < 18; i++){
+});
+
+for (let i = 1; i < 18; i++) {
   let audioEl = document.createElement('audio')
   let audioWrap = document.getElementById('audioWrapper');
   audioWrap.appendChild(audioEl);
-  audioEl.setAttribute('id', 'music'+i);
+  audioEl.setAttribute('id', 'music' + i);
   audioEl.innerHTML = `<source src="./tunes/${i}.mp3" type="audio/mp3">`
 }
-
 
 //Play Music on each button
 var music1 = document.getElementById("music1");
@@ -82,102 +99,102 @@ let isMusic17 = false;
 
 
 
-function Play1(){ 
-  if(isMusic1){
+function Play1() {
+  if (isMusic1) {
     music1.pause();
   }
-  else{
+  else {
     music1.play();
-    music2.pause();   
+    music2.pause();
   }
- }
+}
 
-music1.onplaying = function() {
+music1.onplaying = function () {
   isMusic1 = true;
 };
-music1.onpause = function() {
+music1.onpause = function () {
   isMusic1 = false;
 };
 
-function Play2(){ 
-  if(isMusic2){
+function Play2() {
+  if (isMusic2) {
     music2.pause();
   }
-  else{
+  else {
     music2.play();
     music1.pause();
   }
- }
+}
 
-music2.onplaying = function() {
+music2.onplaying = function () {
   isMusic2 = true;
 };
-music2.onpause = function() {
+music2.onpause = function () {
   isMusic2 = false;
 };
 
-function Play3(){ 
-  if(isMusic3){
+function Play3() {
+  if (isMusic3) {
     music3.pause();
   }
-  else{
+  else {
     music3.play();
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music3.onplaying = function() {
+music3.onplaying = function () {
   isMusic3 = true;
 };
-music3.onpause = function() {
+music3.onpause = function () {
   isMusic3 = false;
 };
 
-function Play4(){ 
-  if(isMusic4){
+function Play4() {
+  if (isMusic4) {
     music4.pause();
   }
-  else{
+  else {
     music4.play();
     music3.pause();
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music4.onplaying = function() {
+music4.onplaying = function () {
   isMusic4 = true;
 };
-music4.onpause = function() {
+music4.onpause = function () {
   isMusic4 = false;
 };
 
-function Play5(){ 
-  if(isMusic5){
+function Play5() {
+  if (isMusic5) {
     music5.pause();
   }
-  else{
+  else {
     music5.play();
     music4.pause();
     music3.pause();
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music5.onplaying = function() {
+music5.onplaying = function () {
   isMusic5 = true;
 };
-music5.onpause = function() {
+music5.onpause = function () {
   isMusic5 = false;
 };
 
-function Play6(){ 
-  if(isMusic6){
+function Play6() {
+  if (isMusic6) {
     music6.pause();
   }
-  else{
+  else {
     music6.play();
     music5.pause();
     music4.pause();
@@ -185,20 +202,20 @@ function Play6(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music6.onplaying = function() {
+music6.onplaying = function () {
   isMusic6 = true;
 };
-music6.onpause = function() {
+music6.onpause = function () {
   isMusic6 = false;
 };
 
-function Play7(){ 
-  if(isMusic7){
+function Play7() {
+  if (isMusic7) {
     music7.pause();
   }
-  else{
+  else {
     music7.play();
     music6.pause();
     music5.pause();
@@ -207,20 +224,20 @@ function Play7(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music7.onplaying = function() {
+music7.onplaying = function () {
   isMusic7 = true;
 };
-music7.onpause = function() {
+music7.onpause = function () {
   isMusic7 = false;
 };
 
-function Play8(){ 
-  if(isMusic8){
+function Play8() {
+  if (isMusic8) {
     music8.pause();
   }
-  else{
+  else {
     music8.play();
     music7.pause();
     music6.pause();
@@ -230,20 +247,20 @@ function Play8(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music8.onplaying = function() {
+music8.onplaying = function () {
   isMusic8 = true;
 };
-music8.onpause = function() {
+music8.onpause = function () {
   isMusic8 = false;
 };
 
-function Play9(){ 
-  if(isMusic9){
+function Play9() {
+  if (isMusic9) {
     music9.pause();
   }
-  else{
+  else {
     music9.play();
     music8.pause();
     music7.pause();
@@ -254,20 +271,20 @@ function Play9(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music9.onplaying = function() {
+music9.onplaying = function () {
   isMusic9 = true;
 };
-music9.onpause = function() {
+music9.onpause = function () {
   isMusic9 = false;
 };
 
-function Play10(){ 
-  if(isMusic10){
+function Play10() {
+  if (isMusic10) {
     music10.pause();
   }
-  else{
+  else {
     music10.play();
     music9.pause();
     music8.pause();
@@ -279,19 +296,19 @@ function Play10(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music10.onplaying = function() {
+music10.onplaying = function () {
   isMusic10 = true;
 };
-music10.onpause = function() {
+music10.onpause = function () {
   isMusic10 = false;
 };
-function Play11(){ 
-  if(isMusic11){
+function Play11() {
+  if (isMusic11) {
     music11.pause();
   }
-  else{
+  else {
     music11.play();
     music10.pause();
     music9.pause();
@@ -304,20 +321,20 @@ function Play11(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music11.onplaying = function() {
+music11.onplaying = function () {
   isMusic11 = true;
 };
-music11.onpause = function() {
+music11.onpause = function () {
   isMusic11 = false;
 };
 
-function Play12(){ 
-  if(isMusic12){
+function Play12() {
+  if (isMusic12) {
     music12.pause();
   }
-  else{
+  else {
     music12.play();
     music11.pause();
     music10.pause();
@@ -331,20 +348,20 @@ function Play12(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music12.onplaying = function() {
+music12.onplaying = function () {
   isMusic12 = true;
 };
-music12.onpause = function() {
+music12.onpause = function () {
   isMusic12 = false;
 };
 
-function Play13(){ 
-  if(isMusic13){
+function Play13() {
+  if (isMusic13) {
     music13.pause();
   }
-  else{
+  else {
     music13.play();
     music12.pause();
     music11.pause();
@@ -359,20 +376,20 @@ function Play13(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music13.onplaying = function() {
+music13.onplaying = function () {
   isMusic13 = true;
 };
-music13.onpause = function() {
+music13.onpause = function () {
   isMusic13 = false;
 };
 
-function Play14(){ 
-  if(isMusic14){
+function Play14() {
+  if (isMusic14) {
     music14.pause();
   }
-  else{
+  else {
     music14.play();
     music13.pause();
     music12.pause();
@@ -388,20 +405,20 @@ function Play14(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music14.onplaying = function() {
+music14.onplaying = function () {
   isMusic14 = true;
 };
-music14.onpause = function() {
+music14.onpause = function () {
   isMusic14 = false;
 };
 
-function Play15(){ 
-  if(isMusic15){
+function Play15() {
+  if (isMusic15) {
     music15.pause();
   }
-  else{
+  else {
     music15.play();
     music14.pause();
     music13.pause();
@@ -418,20 +435,20 @@ function Play15(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music15.onplaying = function() {
+music15.onplaying = function () {
   isMusic15 = true;
 };
-music15.onpause = function() {
+music15.onpause = function () {
   isMusic15 = false;
 };
 
-function Play16(){ 
-  if(isMusic16){
+function Play16() {
+  if (isMusic16) {
     music16.pause();
   }
-  else{
+  else {
     music16.play();
     music15.pause();
     music14.pause();
@@ -449,20 +466,20 @@ function Play16(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music17.onplaying = function() {
+music17.onplaying = function () {
   isMusic17 = true;
 };
-music17.onpause = function() {
+music17.onpause = function () {
   isMusic17 = false;
 };
 
-function Play17(){ 
-  if(isMusic17){
+function Play17() {
+  if (isMusic17) {
     music17.pause();
   }
-  else{
+  else {
     music17.play();
     music16.pause();
     music15.pause();
@@ -481,12 +498,12 @@ function Play17(){
     music2.pause();
     music1.pause();
   }
- }
+}
 
-music17.onplaying = function() {
+music17.onplaying = function () {
   isMusic17 = true;
 };
-music17.onpause = function() {
+music17.onpause = function () {
   isMusic17 = false;
 };
 

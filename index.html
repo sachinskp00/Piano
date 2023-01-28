@@ -17,25 +17,7 @@
 				<span>show keys</span><input type="checkbox" name="">
 			</div>
 		</header>
-		<ul class="piano-keys">
-			<li class="key white" data-key="a" onclick="Play1()"><span>a</span></li>
-			<li class="key black" data-key="w" onclick="Play2()"><span>w</span></li>
-			<li class="key white" data-key="s" onclick="Play3()"><span>s</span></li>
-			<li class="key black" data-key="e" onclick="Play4()"><span>e</span></li>
-			<li class="key white" data-key="d" onclick="Play5()"><span>d</span></li>
-			<li class="key black" data-key="f" onclick="Play6()"><span>f</span></li>
-			<li class="key white" data-key="t" onclick="Play7()"><span>t</span></li>
-			<li class="key black" data-key="g" onclick="Play8()"><span>g</span></li>
-			<li class="key white" data-key="y" onclick="Play9()"><span>y</span></li>
-			<li class="key black" data-key="h" onclick="Play10()"><span>h</span></li>
-			<li class="key white" data-key="u" onclick="Play11()"><span>u</span></li>
-			<li class="key black" data-key="j" onclick="Play12()"><span>j</span></li>
-			<li class="key white" data-key="k" onclick="Play13()"><span>k</span></li>
-			<li class="key black" data-key="o" onclick="Play14()"><span>o</span></li>
-			<li class="key white" data-key="l" onclick="Play15()"><span>l</span></li>
-			<li class="key black" data-key="p" onclick="Play16()"><span>p</span></li>
-			<li class="key white" data-key=";" onclick="Play17()"><span>;</span></li>
-		</ul>
+		<ul class="piano-keys" id="pianoKeys"></ul>
 		
 		<audio controls id="myMusic">
            <source src="./tunes/mySong.mp3" type="audio/mp3">
